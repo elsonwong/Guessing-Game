@@ -8,12 +8,20 @@ console.log(targetNum);
 let guess = parseInt (prompt ("Enter your first guess"));
 let attempts = 1
 
-while (guess !== targetNum) {
+while (parseInt (guess) !== targetNum) {
+    if (guess === 'q') break;
     attempts+=1;
     if (guess > targetNum) {
-        guess = parseInt (prompt ("Number too high! Make another guess"))
+        guess = prompt ("Number too high! Make another guess")
     } else{
-        guess = parseInt (prompt ("Your number is too low! Make another guess"))
+        guess = prompt ("Your number is too low! Make another guess")
     }
 }
+
+if (guess === 'q') {
+    console.log ("You have quitted")
+}else{
+
+console.log("You win!")
 console.log(`Correct! You have attempt ${attempts} guesses`)
+}
